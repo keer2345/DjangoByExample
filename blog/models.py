@@ -1,3 +1,4 @@
+from django import forms
 from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
@@ -43,3 +44,10 @@ class Post(models.Model):
                 self.publish.strftime('%m'),
                 self.publish.strftime('%d'),
                 self.slug])
+
+
+class EmailPostForm(forms.Form):
+    name = forms.CharField(max_length=25)
+    email = forms.EmailField()
+    to = forms.EmailField()
+    comments = forms.CharField(required=False, widget=forms.Textarea)

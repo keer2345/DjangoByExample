@@ -120,3 +120,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# email config
+EMAIL_HOST = 'smtp.163.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'keer2345@163.com'
+EMAIL_HOST_PASSWORD = '912229hui'
+EMAIL_USE_TLS = False # 这里必须是 True，否则发送不成功
+EMAIL_USE_SSL = False # 这里必须是 True，否则发送不成功
+EMAIL_FROM = 'keer2345_163' # 你的 QQ 账号
