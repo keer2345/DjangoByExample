@@ -1,8 +1,8 @@
-from django import forms
 from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
+from taggit.managers import TaggableManager
 
 
 class PublishedManager(models.Manager):
@@ -27,6 +27,8 @@ class Post(models.Model):
         choices=STATUS_CHOICES,
         default=STATUS_CHOICES[0][0])
 
+    tags = TaggableManager()
+
     objects = models.Manager()
     published = PublishedManager()
 
@@ -46,8 +48,17 @@ class Post(models.Model):
                 self.slug])
 
 
-class EmailPostForm(forms.Form):
-    name = forms.CharField(max_length=25)
-    email = forms.EmailField()
-    to = forms.EmailField()
-    comments = forms.CharField(required=False, widget=forms.Textarea)
+class Comment(models.Model):
+    post = models.ForeignKey(Post, related_name='comments')
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ('created',)
+
+    def __str__(self):
+        return "Comment by {} on {}".format(self.name, self.post)
