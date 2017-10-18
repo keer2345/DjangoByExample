@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SITE_ID = 1
+
 
 # Application definition
 
@@ -39,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'taggit',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +61,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # 'DIRS': [os.path.join(BASE_DIR, 'blog/templates')],
-        'DIRS':[],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,6 +131,6 @@ EMAIL_HOST = 'smtp.163.com'
 EMAIL_PORT = 25
 EMAIL_HOST_USER = 'keer2345@163.com'
 EMAIL_HOST_PASSWORD = '912229hui'
-EMAIL_USE_TLS = False # 这里必须是 True，否则发送不成功
-EMAIL_USE_SSL = False # 这里必须是 True，否则发送不成功
-EMAIL_FROM = 'keer2345_163' # 你的 QQ 账号
+EMAIL_USE_TLS = False  # 这里必须是 True，否则发送不成功
+EMAIL_USE_SSL = False  # 这里必须是 True，否则发送不成功
+EMAIL_FROM = 'keer2345_163'  # 你的 QQ 账号
