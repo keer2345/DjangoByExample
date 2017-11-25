@@ -136,3 +136,6 @@ EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = False
 # EMAIL_FROM = 'keer2345_163'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
