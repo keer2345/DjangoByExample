@@ -141,6 +141,16 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.Facebook2OAuth2',
+    'social.backends.twitter.TwitterOAuth',
+
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
 )
+
+SOCIAL_AUTH_FACEBOOK_KEY = '151226242175661'  # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '4789813c5bdca004145e7875b3fc0006'  # Facebook App Secret
+
+SOCIAL_AUTH_TWITTER_KEY = 'UUKqd58B4gYx1GRGIfEjrtNVx'  # Twitter Consumer Key
+# Twitter Consumer Secret
+SOCIAL_AUTH_TWITTER_SECRET = 'KlKqtZbtO1YfVhWXe8Msh7CvSkZISDMP6DVzi7B6vAEKOBIdy8'
