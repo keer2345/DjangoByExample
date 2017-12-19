@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Bookmark an image pre {% endblock %}
+{% block content %}
+    <form action="/images/create" method="get">
+        <label>Title:</label> <input type="text" name="title"/>
+        <label>Url:</label><input type="text" name="url"/>
+        <input type="submit" value="Jump to image"/>
+    </form>
+{% endblock %}
