@@ -9,7 +9,7 @@ Markdown==2.6.9
 oauthlib==2.0.6
 olefile==0.44
 Pillow==4.3.0
-Pygments==2.2.0
+Pygments==2.7.4
 PyJWT==1.5.3
 pysolr==3.6.0
 python-social-auth==0.2.21
